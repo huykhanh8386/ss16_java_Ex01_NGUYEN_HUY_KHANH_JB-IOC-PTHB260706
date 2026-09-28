@@ -1,0 +1,23 @@
+package Ex01;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        List<Integer> numbers = new ArrayList<>();
+        System.out.println("Nhập số lượng phần tử: ");
+        int n = Integer.parseInt(sc.nextLine());
+        for (int i = 1; i <= n; i++) {
+            System.out.println("number" +i);
+            int number = Integer.parseInt(sc.nextLine());
+            numbers.add(number);
+        }
+        System.out.println("danh sách vừa nhập là: ");
+        System.out.println(numbers);
+        System.out.println("Danh sách các số chẵn là: ");
+        numbers.stream().filter(number -> number % 2 == 0).forEach(System.out::println);
+        System.out.println("Danh sách các số lơn hơn 30 là");
+        numbers.stream().filter(number -> number > 30).forEach(System.out::println);
+    }
+}
