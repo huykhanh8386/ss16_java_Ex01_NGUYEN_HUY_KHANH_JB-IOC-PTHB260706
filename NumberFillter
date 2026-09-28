@@ -1,0 +1,15 @@
+package Ex01;
+
+import java.util.List;
+import java.util.function.Predicate;
+
+public class NumberFillter {
+    public static void fillterNumbers(List<Integer> list, Predicate<Integer> predicate) {
+        boolean first = true;
+        for (Integer number : list) {
+            if (predicate.test(number)) {
+                System.out.println(number);
+            }
+        }
+    }
+}
